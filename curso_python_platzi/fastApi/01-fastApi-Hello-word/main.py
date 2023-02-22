@@ -1,8 +1,10 @@
 # imports del core de python
 from typing import Optional
+from enum import Enum
 
 # imports de librerias externas
 from pydantic import BaseModel
+from pydantic import Field
 
 
 # import de fastApi
@@ -11,12 +13,31 @@ from fastapi import Body, Query, Path
 
 app = FastAPI()
 
+# se colocan todos los Enum que se usen en el programa
+class Universo(Enum):
+    marvel = 'Marvel'
+    dc = 'DC'
+
+
 # Definicion de modelos
+class Direccion(BaseModel):
+    calle: str
+    numero:int
+    numero_exterior: Optional[int]
+
+
 class Persona(BaseModel):
     nombre: str
     apellido: str
     edad: int
     casado: Optional[bool]
+
+
+# Validacion Model, importamos Field de pydantic
+class SuperHeroe(BaseModel):
+    poder: str = Field(..., min_length=1, max_length=20)
+    fuerza: int = Field(..., ge=10, le=100)
+    universo: Optional[Universo] = Field(default=None)
 
 
 @app.get('/')
@@ -73,3 +94,31 @@ async def validaciones_path(
         persona_id:int = Path(..., ge=0) # este parametro es obligatorio y se agrega una validacion
     ):
     return {"validacion_path": persona_id}
+
+
+# validaciones: Request Body
+@app.put('/validando/request-body/{id}')
+async def validando_request_body(id:int = Path(..., ge=0), persona: Persona = Body(...)) -> dict: # agregando tipado de lo que retorna la funcion
+    return {id: persona}
+
+
+# los request body no se pueden validar de forma explicita como los path, para eso se utiliza el validation model
+@app.put('/validando/two-request-body/{id}')
+async def validando_two_request_body(id:int = Path(..., ge=0), persona: Persona = Body(...), direccion: Direccion = Body(...)) -> dict:
+    return {
+        id: {
+            "persona": persona,
+            "direccion": direccion
+        }
+    }
+
+
+# Validaciones: Model
+@app.put('/validando/models/{id}')
+async def validando_models(id:int = Path(..., ge=0), persona: Persona = Body(...), super_heroe: SuperHeroe = Body(...)) -> dict:
+    return {
+        id: {
+            "persona": persona,
+            "super_heroe": super_heroe
+        }
+    }
