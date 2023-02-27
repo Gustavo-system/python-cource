@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException, Body
 from pydantic import BaseModel
 
 
@@ -29,6 +29,24 @@ async def get_users():
 
 @app.get("/user/{user_id}")
 async def get_user(user_id:int):
+    # user = list(filter(lambda user:user.id == user_id, users_list))
+    # print(type(user))
+    # return user
+    return searh_user(user_id=user_id)
+
+
+@app.get(path="/user", status_code=201)
+async def post_user(user:User = Body(...)):
+    if type(searh_user(user.id)) == User:
+        raise HTTPException(status_code=400, detail="El usuario ya existe")
+    users_list.append(user)
+    return {"Menssage": "Usuario creado exitosamente", "User" : user}
+
+
+# funcion para buscar un usuario
+def searh_user(user_id:int):
     user = list(filter(lambda user:user.id == user_id, users_list))
-    print(type(user))
-    return user
+    try:
+        return list(user)[0]
+    except Exception as ex:
+        return {"Error" : "No se encontro el usuario", "Value": f"{ex}"}
