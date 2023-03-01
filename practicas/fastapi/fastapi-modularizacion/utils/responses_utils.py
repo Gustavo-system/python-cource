@@ -10,7 +10,7 @@ def general_response_success(status_code:int, message:str) -> dict:
 
 
 """
-Retorna una respuesta exitosa
+Retorna una respuesta exitosa con data
 """
 def general_response_select(name:str, data:dict or list) -> dict:
     return {
