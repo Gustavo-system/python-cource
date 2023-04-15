@@ -1,4 +1,6 @@
-# se utiliza para definir un numero de iteraciones en algun ciclo
+"""
+se utiliza para definir un numero de iteraciones en algun ciclo
+"""
 
 # hay que tomar en cuenta que el numero final no es inclusivo
 for numero in range(0, 10):
@@ -7,6 +9,7 @@ for numero in range(0, 10):
 print('\n')
 
 # se le puede agregar un tercer parametro para indicar el numero de pasos que dara en la iteracion
+# range solo recibe numeros enteros como parametros
 for numero in range(0, 11, 2):
     print(numero)
 
