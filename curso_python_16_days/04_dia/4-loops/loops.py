@@ -13,12 +13,12 @@ lista_letras = ['a', 'b', 'c']
 
 for letra in lista_letras:
     print(f"Letra -> {letra}")
-    
+
 
 for letra in lista_letras:
     indice_letra = lista_letras.index(letra) + 1
     print(f"Letra numero {indice_letra} es {letra}")
-    
+
 
 lista_nombres = ['Chanchito feliz', 'Chanchito triste', 'Guacamaya', 'Loro', 'Caballito']
 
@@ -28,10 +28,10 @@ for nombre in lista_nombres:
         print(nombre)
 
 
-palabra = "python "
+PALABRA = "python "
 
 
-for letra in palabra:
+for letra in PALABRA:
     print(letra)
 
 
@@ -53,4 +53,17 @@ sintaxis:
 while condicion:
 	codigo
 
+importante agregar algun modificador dentro del programa que en algun momento cambie la condicion
+"""
+monedas = 5
+
+while monedas > 0:
+    monedas -= 1
+    print(f"Tengo {monedas} moneda")
+else:
+    print("No tengo monedas ya")
+    
+"""
+break - interrumpe la ajecucion del programa
+continue - se salta esa parte del codigo y continua
 """

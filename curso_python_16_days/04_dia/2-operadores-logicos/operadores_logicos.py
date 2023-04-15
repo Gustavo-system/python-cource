@@ -1,7 +1,7 @@
 # Operadores logicos
 
 """
-Cuando se utiliza and quiere decir que ambas condiciones deben cumplirce
+Cuando se utiliza 'and' quiere decir que ambas condiciones deben cumplirce
 y = and
 
 Cuando se utiliza 'or' quiere decir que alguna de las condiciones debe cumplirce
