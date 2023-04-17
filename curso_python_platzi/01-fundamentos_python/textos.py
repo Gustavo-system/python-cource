@@ -7,8 +7,8 @@ print(f'upper pone todas las letras en mayuscula {nombre.upper()}')
 print(f'capitalize pone la primera letra en mayuscula {nombre.capitalize()}')
 print(f'strip elimina espacios al inicio y al final del texto {nombre.strip()}')
 print(nombre.replace('a', 'e'))
-print(f'strip elimina espacios al inicio y al final del texto {nombre[5]}')
-print(f'strip elimina espacios al inicio y al final del texto {len(nombre)}')
+print(f'Accder a la posicion del texto {nombre[5]}')
+print(f'saber la longitud de un texto {len(nombre)}')
 
 # texto.replace('', '')				-> remplasa el primer parametro por el parametro dos
 # texto[posicion]						-> retorna la letra que este en la posicion indicada en el texto
