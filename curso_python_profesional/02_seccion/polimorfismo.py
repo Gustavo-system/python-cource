@@ -8,7 +8,7 @@ class Pajaro:
         print("yo, pajaro vuelo")
 
 
-def moverse(animal):
+def moverse(animal): # se implementa un metodo para explicar el polimorfismo
     # si el metodo no se encuentra en la instancia, detorana un AttributeError
     animal.avanzar()
 
