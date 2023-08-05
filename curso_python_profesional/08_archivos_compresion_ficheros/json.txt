@@ -1,0 +1,14 @@
+{
+	"cliente1": {
+		"nombre" : "chanchito",
+		"edad" : 24
+	},
+	"cliente2": {
+		"nombre" : "borreguito",
+		"edad" : 60
+	},
+	"cliente3": {
+		"nombre" : "chilaquil",
+		"edad" : 25
+	}
+}
