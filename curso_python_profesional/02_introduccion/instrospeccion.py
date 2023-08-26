@@ -12,3 +12,6 @@ class Intro():
 
 dato = Intro("valor")
 
+print(isinstance(dato, Intro)) # validamos la instancia de un objeto
+
+print(hasattr(dato, 'perro')) # nos devuelve si existe ese calor en la instacia del objeto

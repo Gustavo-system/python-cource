@@ -27,3 +27,25 @@ print(f"numero generado {next(numero_generado)}")
 print(f"numero generado {next(numero_generado)}")
 print(f"numero generado {next(numero_generado)}")
 print(f"numero generado {next(numero_generado)}")
+
+
+"""Generador de numeros pares"""
+def genera_pares(limite):
+    for numero in range(0, limite + 1):
+        if numero % 2 == 0:
+            yield numero
+
+
+for generador in genera_pares(10):
+    print(generador)
+
+
+# generador de numero x2
+def genera_pares_v2(limite):
+    numero = 1
+    while numero <= limite:
+        yield numero * 2
+        numero = numero + 1
+
+for generador in genera_pares_v2(10):
+    print(generador)
