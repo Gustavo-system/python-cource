@@ -9,4 +9,12 @@ with open(PATH_FILE, 'r') as file:
 print(f"data: {data}")
 
 # acceder a los valores del json
-print(f"data del cliente 1: {data.get('cliente1')}")
+print(f"data del cliente 1: {data['cliente1']}")
+
+# print(f"este cliente no existe, forzamos una exception {data['clientess']}")
+
+try:
+    if data['cliente4']:
+        print(f'El cliente es {data.get("cliente1")}')
+except KeyError:
+    print('No se encontro el valor indicado')
