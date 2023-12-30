@@ -1,0 +1,12 @@
+<!-- importamos la plantilla pase para hacer uso de ella -->
+{% extends 'core/base.html' %}
+
+{% block title %} Portada {% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
+
+<!-- indicamos el contenido dinamico -->
+{% block headers %}
+<h1>Gustavo Solar</h1>
+<span class="subheading">Ingeniero en Sistemas Computacionales</span>
+{% endblock %}
