@@ -5,3 +5,4 @@ venv
 *.zip
 *.gz
 .tr
+.DS_Store

@@ -25,7 +25,7 @@ pipenv install <paquete>
 django-admin startproject <name_proyect>
 ```
 
-### crear una app de django
+### crear una applicacion del proyecto
 ```
 python3 manage.py startapp <name_proyect>
 ```
@@ -48,4 +48,5 @@ python3 manage.py migrate
 ### crear un super usuario
 ```
 python3 manage.py createsuperuser
+python3 manage.py createsuperuser --username admin --email admin@example.com
 ```

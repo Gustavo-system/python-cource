@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 
 from core import views
+# from core.views import HelloWorld
 from django.conf import settings
 
 urlpatterns = [
@@ -26,6 +27,7 @@ urlpatterns = [
     path("about-me", view=views.about, name="about"),
     path("portfolio", view=views.portfolio, name="portfolio"),
     path("contact", view=views.contact, name="contact"),
+    # path("demoClase", view=HelloWorld.as_view, name="contact"),
 ]
 
 if settings.DEBUG:
