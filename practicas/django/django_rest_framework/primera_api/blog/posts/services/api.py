@@ -71,7 +71,12 @@ Otra forma de realizar los endpoints con ModelViewSet
 from rest_framework.viewsets import ModelViewSet
 from ..serializers.serializers import PostSerializer
 from posts.models import Post
+from ..permissions.permissions import IsAdminOrReadOnly
+
 
 class PostModelViewSet(ModelViewSet):
+	"""Se genera un crud de forma rapida"""
+	permission_classes = [IsAdminOrReadOnly] # se pueden agregar mas permisos separados por una (,)
 	serializer_class = PostSerializer
 	queryset = Post.objects.all()
+	http_method_names = ['get', 'post', 'put', 'delete'] # indica que metodos se generaran

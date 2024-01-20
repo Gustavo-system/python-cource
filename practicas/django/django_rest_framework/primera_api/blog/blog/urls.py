@@ -19,8 +19,30 @@ from django.urls import path, include
 # from posts.router.api import PostApiView # APIView
 from posts.router.router import router_post #APIViewSet and ModelViewSet
 
+# para generar un ui de documentacion
+from drf_yasg import openapi
+from drf_yasg.views import get_schema_view
+
+
+schema_view = get_schema_view(
+   openapi.Info(
+      title="Documentacion Primera API",
+      default_version='v0.0.1',
+      description="Documentacion del api rest de practica que estoy realizando, haciendo un pequeño blog",
+    #   terms_of_service="https://www.google.com/policies/terms/",
+    #   contact=openapi.Contact(email="contact_dev@pruba.com.gs"),
+      license=openapi.License(name="BSD License"),
+   ),
+   public=True,
+)
+
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     # path("api/posts", PostApiView.as_view()), # APIView
     path("api/", include(router_post.urls)), #APIViewSet and ModelViewSet
+
+	# cnfiguracion para la documentacion del api
+    path("docs/", schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path("redocs/", schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
