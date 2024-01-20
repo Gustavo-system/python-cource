@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 	"rest_framework",
 	"drf_yasg",
 	"posts",
+	"users",
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,10 @@ STATIC_ROOT = "./static/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+"""
+Declaramos el nuevo modelo de usuario para poder modificar las propiedades del usuario
+y sea mas personalizado.
+"""
+AUTH_USER_MODEL = "users.User"

@@ -26,12 +26,12 @@ from drf_yasg.views import get_schema_view
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="Documentacion Primera API",
-      default_version='v0.0.1',
-      description="Documentacion del api rest de practica que estoy realizando, haciendo un pequeño blog",
-    #   terms_of_service="https://www.google.com/policies/terms/",
-    #   contact=openapi.Contact(email="contact_dev@pruba.com.gs"),
-      license=openapi.License(name="BSD License"),
+		title="Documentacion Primera API",
+		default_version='v0.0.1',
+		description="Documentacion del api rest de practica que estoy realizando, haciendo un pequeño blog",
+		# terms_of_service="https://www.google.com/policies/terms/",
+		# contact=openapi.Contact(email="contact_dev@pruba.com.gs"),
+		license=openapi.License(name="BSD License"),
    ),
    public=True,
 )
