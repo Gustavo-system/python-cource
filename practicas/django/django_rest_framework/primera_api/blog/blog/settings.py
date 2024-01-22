@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import datetime
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -103,6 +104,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# implementar libreria de jwt
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+# aumentar el timpo de vida de un token y el refrestoken
+SIMPLE_JWT = {
+	'ACCESS_TOKEN_LIFETIME' : datetime.timedelta(minutes=60),
+	'REFRESH_TOKEN_LIFETIME' : datetime.timedelta(days=7)
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/

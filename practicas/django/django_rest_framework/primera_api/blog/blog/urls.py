@@ -41,6 +41,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # path("api/posts", PostApiView.as_view()), # APIView
     path("api/", include(router_post.urls)), #APIViewSet and ModelViewSet
+	# otra forma de importar rutas
+	path('api/', include('users.router.router')),
 
 	# cnfiguracion para la documentacion del api
     path("docs/", schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
