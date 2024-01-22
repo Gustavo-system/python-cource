@@ -50,3 +50,7 @@ python3 manage.py migrate
 python3 manage.py createsuperuser
 python3 manage.py createsuperuser --username admin --email admin@example.com
 ```
+
+
+### genarar un override del usuario
+- se realiza una app para sobreescribir el usuario y poder manipular el modelo de una mejor forma
