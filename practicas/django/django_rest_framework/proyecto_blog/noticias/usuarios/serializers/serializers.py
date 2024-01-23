@@ -1,8 +1,9 @@
 from rest_framework import serializers
 from usuarios.models import User
-# from typing import override
+
 
 class UserRegisterSerializer(serializers.ModelSerializer):
+
 	class Meta:
 		model = User
 		fields = ['id', 'email', 'username', 'password']
@@ -14,3 +15,17 @@ class UserRegisterSerializer(serializers.ModelSerializer):
 			instance.set_password(password)
 		instance.save()
 		return instance
+	
+
+class UserSerializer(serializers.ModelSerializer):
+
+	class Meta:
+		model = User
+		fields = ['id', 'email', 'username', 'first_name', 'last_name', 'is_active']
+
+
+class UserUpdateSerializer(serializers.ModelSerializer):
+
+	class Meta:
+		model = User
+		fields = ['first_name', 'last_name', 'is_active']
