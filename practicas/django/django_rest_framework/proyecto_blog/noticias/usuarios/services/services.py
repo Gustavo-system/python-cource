@@ -26,10 +26,10 @@ class UserView(APIView):
 	def get(self, request):
 		user_serializer = UserSerializer(request.user)
 		return Response(status=status.HTTP_200_OK, data=user_serializer.data)
-	
+
 	def put(self, request):
 		user = User.objects.get(id=request.user.id)
-		user_serializer = UserUpdateSerializer(user=user, data=request.data)
+		user_serializer = UserUpdateSerializer(user, data=request.data)
 		if user_serializer.is_valid(raise_exception=True):
 			user_serializer.save()
 			return Response(status=status.HTTP_200_OK, data=user_serializer.data)
