@@ -59,6 +59,11 @@ pip3 install pipenv
 	pipenv install <nombre_paquete>
 	```
 
+	2- instalar todos los paquets
+	```
+	pipenv install
+	```
+
 - desinstalar un paquete del entorno virtual
 	```
 	pipenv uninstall <nombre_paquete>
