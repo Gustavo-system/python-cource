@@ -4,4 +4,4 @@ from categorias.models import Categoria
 # Register your models here.
 @admin.register(Categoria)
 class CategoriaAdmin(admin.ModelAdmin):
-	list_display = ['title', 'publicado']
+	list_display = ['id', 'title', 'publicado']
